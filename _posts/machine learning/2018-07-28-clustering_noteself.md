@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "self_note_clustering"
+title:  "clustering_noteself"
 date:   2018-7-28
 comments: true
 categories: machine learning
@@ -77,6 +77,7 @@ def k-means(int k, arr[][], threshold=0.1):
 **噪音：** 不包含在任何簇中的对象。
 
 * **思想**
+
 如果一个点p的**\epsilon-邻域**包含多于m个的对象，则创建一个p作为**核心对象**的新**簇**。然后DBSCAN反复寻找从这些核心对象**直接密度可达**的对象，这个过程可能涉及**密度可达**簇的合并。当没有新的点可以被添加到任何簇时，该过程结束。
 
 
@@ -89,6 +90,7 @@ def k-means(int k, arr[][], threshold=0.1):
 
 \rho i = count( distance(d_ij, d_c) )
 d_c是截断距离，\rho i 表示到对象i的距离小于d_c的对象的个数。一种推荐做法是选择d_c，使每个点的平均邻居数为所有点的1%-2%。
+
 **高局部密度点距离\sigma i :**
 
 \sigma i = min(d_ij) (j: \rho j > \rho i)
